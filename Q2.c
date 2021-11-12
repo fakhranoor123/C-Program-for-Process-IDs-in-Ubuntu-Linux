@@ -14,7 +14,7 @@ int main(void){
  }
  else{ // Parent Process
    wait(&status);
-   printf("In the parent Process :/nName is Kubra Parveen and CNIC is 30000-1234567-8\n");
+   printf("In the parent Process :/nName is Fakhra Noor and CNIC is 30000-1234567-8\n");
  }
 
  return 0;
