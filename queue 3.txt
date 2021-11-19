@@ -1,0 +1,12 @@
+// create an IPC key for our message queue
+myKey = ftok(".", MYPORT);
+// create the message queue
+// IPC_CREAT - create a queue with the given key
+// if it does not already exist.
+// IPC_EXCL - return error if queue with the given
+// key already exists.
+// PERMS - specify permissions for queue.
+flags = IPC_CREAT | IPC_EXCL | PERMS;
+queueId = msgget(myKey, flags);
+// get a message from the user
+msgptr = fgets(msg, MSG_SIZE, stdin);
