@@ -1,0 +1,14 @@
+// the message buffer record
+typedef struct msgbuffer{
+long mtype; // message type (must be > 0)
+char the_message[MSG_SIZE]; // the message
+}Message, *Messageptr;
+// message queue parameters
+key_t myKey; // unique key
+int queueId; // message queue identifier
+int flags;
+size_t msgsize = sizeof(Message);
+int main(int argc, char *argv[]){
+Messageptr message1;
+char msg[MSG_SIZE];
+char *msgptr;
