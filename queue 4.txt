@@ -1,0 +1,12 @@
+// fork a new process
+if(fork()){
+// Parent: send a message to the queue
+message1 = (Messageptr)malloc(msgsize);
+message1->mtype = DATA_T;
+strncpy(message1->the_message, msgptr, MSG_SIZE-1);
+ret_code = msgsnd(queueId, message1, msgsize, BLOCKING);
+printf("Message sent\n");
+sleep(2); // sleep before parent cleans up the message queue
+}
+Operating System Concepts – 9th Edition 3.114 Silberschatz, Galvin and Gagne ©2013
+Message Q
