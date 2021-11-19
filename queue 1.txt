@@ -1,0 +1,13 @@
+#include <sys/wait.h>
+#include <sys/types.h>
+#include <sys/msg.h>
+#include <sys/ipc.h>
+#define TRUE 1
+#define FALSE 0
+#define BLOCKING 0 // blocking send/receive, msgflg value
+#define MYPORT 12345 // unique value to create key
+#define FIRST_MSG 0 // receive first message in queue
+#define DATA_T 1 // type code for a data message
+#define PERMS 0644 // access permission
+#define MSG_SIZE 100 // max. size of message
+int ret_code;
