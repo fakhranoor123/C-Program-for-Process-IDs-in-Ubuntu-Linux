@@ -1,0 +1,14 @@
+else{ // Child: read message from queue
+sleep(1);
+printf("Inside child process\n");
+message1 = (Messageptr)malloc(msgsize);
+msgrcv(queueId, message1, msgsize,
+FIRST_MSG, BLOCKING);
+printf("Child process read message type %d %s",
+message1->mtype, message1->the_message);
+exit(0);
+}
+// close the message queue
+msgctl(queueId, IPC_RMID, NULL);
+return 0;
+} /* end main */
